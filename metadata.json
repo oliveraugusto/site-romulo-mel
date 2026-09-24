@@ -1,0 +1,6 @@
+{
+  "name": "Colmeia Imperial — Apicultura & Meliponicultura",
+  "description": "E-commerce de méis (com/sem ferrão), própolis, geleia real e cera alveolada, Escola da Abelha com tutoriais práticos de manejo e apitoxina, e guia completo de monetização apícola.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
