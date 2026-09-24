@@ -1,4 +1,9 @@
 import { Product } from '../types';
+import honeyApisImg from '../assets/images/product_honey_asf_apis_1790206881987.jpg';
+import heroImg from '../assets/images/hero_apiculture_natural_1790206871626.jpg';
+import propolisImg from '../assets/images/product_propolis_royal_jelly_1790206892482.jpg';
+import beeswaxImg from '../assets/images/product_beeswax_foundation_1790206901617.jpg';
+import schoolImg from '../assets/images/school_bee_inspection_1790206910367.jpg';
 
 export const PRODUCTS: Product[] = [
   {
@@ -15,7 +20,7 @@ export const PRODUCTS: Product[] = [
     description: 'Mel 100% puro e cru, colhido a frio sem pasteurização em floradas nativas do bioma Cerrado (pequizeiro, lixeira e vassourinha). Preserva todas as enzimas vivas (diastase e invertase), pólen residual e minerais essenciais.',
     inStock: true,
     stockCount: 38,
-    image: '/src/assets/images/product_honey_asf_apis_1790206881987.jpg',
+    image: honeyApisImg,
     features: [
       'Não pasteurizado (enzimas vivas preservadas)',
       'Índice refratométrico de umidade < 17.8%',
@@ -44,7 +49,7 @@ export const PRODUCTS: Product[] = [
     description: 'Colhido durante o auge da florada de citrus no interior de São Paulo. Apresenta coloração âmbar clara translúcida, aroma delicadamente cítrico e acidez perfeitamente balanceada.',
     inStock: true,
     stockCount: 22,
-    image: '/src/assets/images/hero_apiculture_natural_1790206871626.jpg',
+    image: heroImg,
     features: [
       'Monofloral de florada cítrica paulista',
       'Aroma floral nobre e paladar suave',
@@ -73,7 +78,7 @@ export const PRODUCTS: Product[] = [
     description: 'Tesouro da meliponicultura brasileira. As abelhas Jataí produzem um mel singular, mais fluido, naturalmente acidulado e com teores extraordinários de inibina e substâncias antimicrobianas ativas. Fermentado suave natural em potes de cerume.',
     inStock: true,
     stockCount: 15,
-    image: '/src/assets/images/product_honey_asf_apis_1790206881987.jpg',
+    image: honeyApisImg,
     features: [
       'Espécie nativa sem ferrão 100% brasileira',
       'Sabor agridoce único com notas herbais',
@@ -102,7 +107,7 @@ export const PRODUCTS: Product[] = [
     description: 'Um dos méis mais cobiçados da alta gastronomia mundial. A Uruçu Amarela é uma abelha nobre da Mata Atlântica que forrageia em estratos arbóreos elevados. Possui textura sedosa, notas amadeiradas e aromas de resinas nativas raras.',
     inStock: true,
     stockCount: 9,
-    image: '/src/assets/images/product_honey_asf_apis_1790206881987.jpg',
+    image: honeyApisImg,
     features: [
       'Produção extremamente limitada por colônia (1 a 2 kg/ano)',
       'Harmonização sublime com queijos curados e alta culinária',
@@ -131,7 +136,7 @@ export const PRODUCTS: Product[] = [
     description: 'Colhido em caixas modulares INPA de meliponários agroecológicos. A Mandaçaia fabrica seus potes com uma mistura rica de cera e geoprópolis, transferindo propriedades antioxidantes profundas e sabor inconfundível para o mel.',
     inStock: true,
     stockCount: 12,
-    image: '/src/assets/images/product_honey_asf_apis_1790206881987.jpg',
+    image: honeyApisImg,
     features: [
       'Rico em compostos fenólicos naturais',
       'Doçura equilibrada por leve acidez frutada',
@@ -160,7 +165,7 @@ export const PRODUCTS: Product[] = [
     description: 'Extrato padronizado com 15% de extrato seco mínimo e alta concentração comprovada de Artepillina-C e flavonoides totais. Produzida no sul de Minas Gerais a partir da resina jovem do alecrim-do-campo, com reconhecimento científico global.',
     inStock: true,
     stockCount: 65,
-    image: '/src/assets/images/product_propolis_royal_jelly_1790206892482.jpg',
+    image: propolisImg,
     features: [
       'Mínimo 15% de extrato seco real (não diluído)',
       'Rico em Artepillina-C (marcador bioativo nobre)',
@@ -189,7 +194,7 @@ export const PRODUCTS: Product[] = [
     description: 'A jóia vermelha da apicultura brasileira com Indicação Geográfica (IG) de Alagoas. As abelhas coletam a resina escarlate do rabo-de-bugio nos manguezais, resultando em isoflavonas raras, neovestitol e vestitol com atividade antioxidante ímpar.',
     inStock: true,
     stockCount: 28,
-    image: '/src/assets/images/product_propolis_royal_jelly_1790206892482.jpg',
+    image: propolisImg,
     features: [
       'Indicação Geográfica oficial dos manguezais nordestinos',
       'Concentração bioativa de flavonoides e isoflavonas',
@@ -218,7 +223,7 @@ export const PRODUCTS: Product[] = [
     description: 'O alimento exclusivo da abelha rainha, responsável por sua longevidade e fertilidade extraordinárias. Coletada artesanalmente em cúpulas reais no terceiro dia de desenvolvimento larval. Mantida permanentemente congelada para preservar o ácido 10-HDA (mínimo 2.0%).',
     inStock: true,
     stockCount: 18,
-    image: '/src/assets/images/product_propolis_royal_jelly_1790206892482.jpg',
+    image: propolisImg,
     features: [
       '100% Pura in natura (nunca misturada com mel ou espessantes)',
       'Concentração garantida de ácido 10-hidroxi-2-decenoico (10-HDA)',
@@ -247,7 +252,7 @@ export const PRODUCTS: Product[] = [
     description: 'Toda a riqueza biológica da geleia real fresca processada por liofilização a vácuo (desidratação a frio abaixo de -40°C). Cada cápsula vegetal equivale a 1.5g de geleia real fresca, sem necessidade de refrigeração.',
     inStock: true,
     stockCount: 30,
-    image: '/src/assets/images/product_propolis_royal_jelly_1790206892482.jpg',
+    image: propolisImg,
     features: [
       'Praticidade total para viagens e rotina diária',
       'Cápsulas 100% vegetais de rápida absorção',
@@ -276,7 +281,7 @@ export const PRODUCTS: Product[] = [
     description: 'Lâminas de cera de abelha 100% virgem alveolada no padrão apícola Langstroth (ninho 42 x 20cm). Rigorosamente esterilizada a 125°C sob pressão para eliminar qualquer risco de esporos patogênicos. Alvéolos hexagonais perfeitamente estampados para aceitação imediata da rainha.',
     inStock: true,
     stockCount: 45,
-    image: '/src/assets/images/product_beeswax_foundation_1790206901617.jpg',
+    image: beeswaxImg,
     features: [
       'Pureza atestada livre de parafina, ceras vegetais ou breu',
       'Alvéolos com espessura exata para puxada rápida pelas abelhas',
@@ -305,7 +310,7 @@ export const PRODUCTS: Product[] = [
     description: 'Composição balanceada de cera de abelha pura e geoprópolis bruto macerado, criando a consistência e maleabilidade ideais para Jataí, Uruçu, Mandaçaia e Tiúba construírem invólucros e potes de alimento em frações do tempo habitual.',
     inStock: true,
     stockCount: 34,
-    image: '/src/assets/images/product_beeswax_foundation_1790206901617.jpg',
+    image: beeswaxImg,
     features: [
       'Incentiva a postura da rainha após divisões de enxame',
       'Aroma atrativo irresistível que acelera a blindagem da caixa',
@@ -334,7 +339,7 @@ export const PRODUCTS: Product[] = [
     description: 'Dispositivo eletrônico profissional para extração não-letal de veneno de abelha. Central microcontrolada emite pulsos elétricos de baixa amperagem (12V-15V / 20-30Hz) que estimulam a picada na placa de vidro sem que as operárias percam o ferrão. Permite produzir apitoxina farmacêutica de alto valor agregado.',
     inStock: true,
     stockCount: 8,
-    image: '/src/assets/images/school_bee_inspection_1790206910367.jpg',
+    image: schoolImg,
     features: [
       'Pulsos ajustáveis: não danifica o abdômen das abelhas',
       'Placas de vidro temperado de 4mm com fios de inox cirúrgico 316',

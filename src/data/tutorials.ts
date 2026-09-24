@@ -1,4 +1,5 @@
 import { TutorialTrack, QuizQuestion } from '../types';
+import schoolImg from '../assets/images/school_bee_inspection_1790206910367.jpg';
 
 export const TUTORIAL_TRACKS: TutorialTrack[] = [
   {
@@ -8,7 +9,7 @@ export const TUTORIAL_TRACKS: TutorialTrack[] = [
     category: 'manejo',
     level: 'Iniciante',
     estimatedTime: '35 min de leitura técnica + prática',
-    coverImage: '/src/assets/images/school_bee_inspection_1790206910367.jpg',
+    coverImage: schoolImg,
     summary: 'Aprenda como manter colônias de Apis mellifera e meliponíneos vigorosas durante os períodos de escassez floral, evitando abandono e declínio populacional.',
     practicalOutcome: 'Capacidade de formular xaropes estimulantes, bifes proteicos e planejar o cronograma anual de trocas de favos velhos.',
     steps: [
@@ -77,7 +78,7 @@ export const TUTORIAL_TRACKS: TutorialTrack[] = [
     category: 'captura',
     level: 'Intermediário',
     estimatedTime: '40 min de preparo técnico',
-    coverImage: '/src/assets/images/school_bee_inspection_1790206910367.jpg',
+    coverImage: schoolImg,
     summary: 'Guia completo para multiplicar meliponários de forma sustentável através da atração de enxames silvestres voadores em garrafas PET, sem agredir o meio ambiente.',
     practicalOutcome: 'Montagem de iscas de alta taxa de ocupação para Jataí, Iraí, Mandaçaia, Mirim e Tubuna.',
     steps: [
@@ -145,7 +146,7 @@ export const TUTORIAL_TRACKS: TutorialTrack[] = [
     category: 'multiplicacao',
     level: 'Avançado',
     estimatedTime: '45 min de procedimento',
-    coverImage: '/src/assets/images/school_bee_inspection_1790206910367.jpg',
+    coverImage: schoolImg,
     summary: 'Aprenda a multiplicar colônias matrizes de Jataí, Uruçu e Mandaçaia com 100% de sobrevivência, utilizando a anatomia vertical das caixas INPA e respeitando o ciclo da rainha.',
     practicalOutcome: 'Execução de divisão de colônias matrizes sem perdas por ataque de forídeos ou morte de crias.',
     steps: [
@@ -213,8 +214,8 @@ export const TUTORIAL_TRACKS: TutorialTrack[] = [
     category: 'apitoxina',
     level: 'Especialista',
     estimatedTime: '50 min de protocolo operacional',
-    coverImage: '/src/assets/images/school_bee_inspection_1790206910367.jpg',
-    summary: 'A apitoxina é o produto de maior valor agregado da colmeia (R$ 250 a R$ 450 por grama). Domine a tecnologia de pulso elétrico suave que preserva a vida das abelhas e gera produto com pureza farmacêutica.',
+    coverImage: schoolImg,
+    summary: 'Apitoxina é o produto de maior valor agregado da colmeia (R$ 250 a R$ 450 por grama). Domine a tecnologia de pulso elétrico suave que preserva a vida das abelhas e gera produto com pureza farmacêutica.',
     practicalOutcome: 'Capacidade de instalar coletores eletrônicos, desidratar e beneficiar apitoxina seca com padrão exportação.',
     steps: [
       {

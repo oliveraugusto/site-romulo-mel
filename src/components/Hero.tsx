@@ -1,4 +1,5 @@
 import { ArrowRight, BookOpen, ShieldCheck, Sparkles, TrendingUp } from 'lucide-react';
+import heroImage from '../assets/images/hero_apiculture_natural_1790206871626.jpg';
 
 interface HeroProps {
   onExploreStore: () => void;
@@ -73,7 +74,7 @@ export function Hero({ onExploreStore, onExploreSchool, onExploreMonetization }:
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-[#DCD7C9] shadow-lg aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] bg-[#EBE7DC]">
               <img
-                src="/src/assets/images/hero_apiculture_natural_1790206871626.jpg"
+                src={heroImage}
                 alt="Favos de mel dourado e potes de mel artesanal cru no apiário"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
