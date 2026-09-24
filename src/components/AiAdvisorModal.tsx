@@ -41,8 +41,9 @@ export function AiAdvisorModal({ isOpen, onClose }: AiAdvisorModalProps) {
     setLoading(true);
 
     try {
-      const apiKey = (typeof process !== 'undefined' && process.env?.GEMINI_API_KEY) || 
-                     (import.meta as any).env?.VITE_GEMINI_API_KEY || '';
+      const envMeta = (typeof import.meta !== 'undefined' && (import.meta as any)?.env) || {};
+      const apiKey = envMeta.VITE_GEMINI_API_KEY || 
+                     (typeof process !== 'undefined' && process?.env?.GEMINI_API_KEY) || '';
 
       if (apiKey) {
         const ai = new GoogleGenAI({ apiKey });
