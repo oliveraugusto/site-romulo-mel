@@ -3,7 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Component, ErrorInfo, ReactNode } from 'react';
+
+class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean; error?: Error }> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error('Colmeia Imperial runtime error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen flex items-center justify-center p-6 bg-[#FAFAF7] text-[#1E1A14]">
+          <div className="max-w-md w-full p-8 bg-white rounded-2xl shadow-xl border border-[#E8E4D8] text-center">
+            <h2 className="text-2xl font-bold text-amber-900 mb-2 font-serif">Colmeia Imperial</h2>
+            <p className="text-stone-600 mb-4 text-sm">Ocorreu um erro no carregamento da aplicação.</p>
+            <div className="text-xs font-mono bg-stone-100 p-3 rounded-lg mb-6 text-stone-700 text-left overflow-auto max-h-32">
+              {this.state.error?.message || 'Erro desconhecido'}
+            </div>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-sm font-semibold transition-colors shadow-sm"
+            >
+              Recarregar Aplicação
+            </button>
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { EcommerceSection } from './components/EcommerceSection';
@@ -104,75 +143,77 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAF7] text-[#1E1A14]">
-      {/* Toast Notification */}
-      {toastMessage && (
-        <div className="fixed bottom-5 right-5 z-50 bg-[#2B2317] text-white px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 text-xs font-medium animate-in fade-in slide-in-from-bottom-3 duration-200">
-          <Check className="w-4 h-4 text-amber-400 shrink-0" />
-          <span>{toastMessage}</span>
-        </div>
-      )}
+    <ErrorBoundary>
+      <div className="min-h-screen flex flex-col bg-[#FAFAF7] text-[#1E1A14]">
+        {/* Toast Notification */}
+        {toastMessage && (
+          <div className="fixed bottom-5 right-5 z-50 bg-[#2B2317] text-white px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 text-xs font-medium animate-in fade-in slide-in-from-bottom-3 duration-200">
+            <Check className="w-4 h-4 text-amber-400 shrink-0" />
+            <span>{toastMessage}</span>
+          </div>
+        )}
 
-      {/* Main Top Navigation */}
-      <Navbar
-        cartItems={cartItems}
-        onOpenCart={() => setIsCartOpen(true)}
-        onOpenAdvisor={() => setIsAdvisorOpen(true)}
-        activeSection={activeSection}
-      />
-
-      <main className="flex-1">
-        {/* Hero */}
-        <Hero
-          onExploreStore={() => scrollToSection('loja')}
-          onExploreSchool={() => scrollToSection('escola')}
-          onExploreMonetization={() => scrollToSection('monetizacao')}
+        {/* Main Top Navigation */}
+        <Navbar
+          cartItems={cartItems}
+          onOpenCart={() => setIsCartOpen(true)}
+          onOpenAdvisor={() => setIsAdvisorOpen(true)}
+          activeSection={activeSection}
         />
 
-        {/* E-commerce Storefront */}
-        <EcommerceSection
-          products={products}
-          onAddToCart={(p) => handleAddToCart(p, 1)}
-          onViewDetails={(p) => setSelectedProduct(p)}
+        <main className="flex-1">
+          {/* Hero */}
+          <Hero
+            onExploreStore={() => scrollToSection('loja')}
+            onExploreSchool={() => scrollToSection('escola')}
+            onExploreMonetization={() => scrollToSection('monetizacao')}
+          />
+
+          {/* E-commerce Storefront */}
+          <EcommerceSection
+            products={products}
+            onAddToCart={(p) => handleAddToCart(p, 1)}
+            onViewDetails={(p) => setSelectedProduct(p)}
+          />
+
+          {/* Escola da Abelha (Tutoriais, Simulador & Quiz) */}
+          <SchoolSection />
+
+          {/* Guia de Monetização & Calculadora ROI */}
+          <MonetizationSection />
+        </main>
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Overlays and Modals */}
+        <ProductDetailModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          onAddToCart={handleAddToCart}
         />
 
-        {/* Escola da Abelha (Tutoriais, Simulador & Quiz) */}
-        <SchoolSection />
+        <CartDrawer
+          isOpen={isCartOpen}
+          onClose={() => setIsCartOpen(false)}
+          cartItems={cartItems}
+          onUpdateQuantity={handleUpdateQuantity}
+          onRemoveItem={handleRemoveItem}
+          onProceedToCheckout={() => setIsCheckoutOpen(true)}
+        />
 
-        {/* Guia de Monetização & Calculadora ROI */}
-        <MonetizationSection />
-      </main>
+        <CheckoutModal
+          isOpen={isCheckoutOpen}
+          onClose={() => setIsCheckoutOpen(false)}
+          cartItems={cartItems}
+          onOrderSuccess={handleOrderSuccess}
+        />
 
-      {/* Footer */}
-      <Footer />
-
-      {/* Overlays and Modals */}
-      <ProductDetailModal
-        product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-        onAddToCart={handleAddToCart}
-      />
-
-      <CartDrawer
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        cartItems={cartItems}
-        onUpdateQuantity={handleUpdateQuantity}
-        onRemoveItem={handleRemoveItem}
-        onProceedToCheckout={() => setIsCheckoutOpen(true)}
-      />
-
-      <CheckoutModal
-        isOpen={isCheckoutOpen}
-        onClose={() => setIsCheckoutOpen(false)}
-        cartItems={cartItems}
-        onOrderSuccess={handleOrderSuccess}
-      />
-
-      <AiAdvisorModal
-        isOpen={isAdvisorOpen}
-        onClose={() => setIsAdvisorOpen(false)}
-      />
-    </div>
+        <AiAdvisorModal
+          isOpen={isAdvisorOpen}
+          onClose={() => setIsAdvisorOpen(false)}
+        />
+      </div>
+    </ErrorBoundary>
   );
 }
